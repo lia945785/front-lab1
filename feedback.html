@@ -6,6 +6,50 @@
     <meta name="description" content="Сторінка зворотного зв'язку з Intel Corporation: форма для звернень, пропозицій та скарг">
     <meta name="keywords" content="Intel, зворотній зв'язок, форма, звернення">
     <title>Intel Corporation - Зворотній зв'язок</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        form {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            align-content: flex-start;
+            gap: 20px;
+            padding: 20px;
+            background-color: white;
+        }
+        fieldset {
+            flex-basis: 100%;
+        }
+        input, select, textarea {
+            padding: 8px;
+            border: 1px solid gray;
+        }
+        textarea {
+            width: 100%;
+        }
+        .purpose {
+            flex-grow: 1;
+        }
+        .details {
+            flex-grow: 2;
+        }
+        .consent {
+            order: 1;
+            flex-basis: 100%;
+        }
+        .buttons {
+            order: 2;
+            flex-shrink: 0;
+            align-self: center;
+        }
+        button, input[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            background-color: #0068b5;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -53,7 +97,7 @@
                 </p>
             </fieldset>
 
-            <p>
+            <p class="purpose">
                 <label for="purpose">5. Мета зворотнього зв'язку:</label>
                 <select id="purpose" name="purpose">
                     <option value="cooperation" selected>співпраця</option>
@@ -63,18 +107,18 @@
                 </select>
             </p>
 
-            <p>
+            <p class="details">
                 <label for="details">6. Детально:</label><br>
                 <textarea id="details" name="details" rows="8" cols="60" maxlength="600" placeholder="Опишіть звернення детально (не більше 600 символів)"></textarea>
             </p>
 
-            <p>
+            <p class="buttons">
                 <button type="submit">Надіслати звернення</button>
                 <input type="submit" value="Надіслати та зберегти копію">
                 <button type="reset">Очистити форму</button>
             </p>
 
-            <p>
+            <p class="consent">
                 <input type="checkbox" id="consent" name="consent" value="yes" required>
                 <label for="consent">Я даю згоду на обробку наданої мною інформації відповідно до Закону України "Про захист персональних даних"*</label>
             </p>

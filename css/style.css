@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: rgb(240, 240, 240);
+}
+h1, h2, h3 {
+    font-family: Verdana, sans-serif;
+    font-weight: normal;
+}
+header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 110px;
+    padding: 0 40px;
+    background-color: #0068b5;
+    color: white;
+}
+img[src*="logo"] {
+    width: auto;
+    height: 70px;
+    padding: 5px 10px;
+    background-color: white;
+}
+main, aside {
+    padding: 0 40px;
+}
+footer {
+    padding: 20px 40px;
+    background-color: hsl(210, 100%, 20%);
+    color: white;
+}
+footer a {
+    color: white;
+}

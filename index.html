@@ -6,6 +6,88 @@
     <meta name="description" content="Промо-сайт корпорації Intel Corporation: мета створення, завдання, засновники, напрями діяльності та контакти">
     <meta name="keywords" content="Intel, корпорація, мікропроцесори, напівпровідники, Нойс, Мур, закон Мура">
     <title>Intel Corporation - Головна сторінка</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            position: relative;
+            padding-top: 110px;
+        }
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+        }
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            padding: 0 40px;
+            background-color: hsl(210, 100%, 20%);
+        }
+        nav ul {
+            margin: 0;
+            padding: 0;
+        }
+        nav li {
+            display: inline-block;
+        }
+        nav a {
+            display: block;
+            padding: 15px 25px;
+            background-color: #0068b5;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s;
+        }
+        nav a:hover {
+            background-color: white;
+            color: #0068b5;
+            transform: translateY(-3px);
+        }
+        main {
+            float: left;
+            width: 65%;
+        }
+        aside {
+            float: right;
+            width: 35%;
+        }
+        footer {
+            clear: both;
+        }
+        #mission {
+            margin: 40px 0;
+            padding: 0;
+        }
+        #mission > p:first-of-type::after {
+            content: " 👨‍💼";
+        }
+        #founders {
+            max-height: 400px;
+            overflow-y: auto;
+            transition: transform 0.5s;
+        }
+        #founders:hover {
+            transform: scale(1.05);
+        }
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            border: 1px solid gray;
+        }
+        th {
+            background-color: #0068b5;
+            color: white;
+        }
+        address:hover {
+            text-shadow: 2px 2px 2px #00c7fd;
+            transition: text-shadow 0.5s 2s;
+        }
+    </style>
 </head>
 <body>
     <header>

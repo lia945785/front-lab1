@@ -36,6 +36,7 @@
             margin: 0;
         }
         figure img {
+            display: block;
             width: 100%;
             height: 200px;
             object-fit: cover;
@@ -59,6 +60,50 @@
         a:active {
             color: darkgreen;
         }
+        .card {
+            position: relative;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flipped {
+            transform: rotateY(180deg);
+        }
+        figure img, .back {
+            backface-visibility: hidden;
+        }
+        .back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 10px 10px 10px 30px;
+            font-size: 14px;
+            background-color: #0068b5;
+            color: white;
+            transform: rotateY(180deg);
+        }
+        #modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        #modal.show {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #modal div {
+            max-width: 450px;
+            padding: 20px;
+            background-color: white;
+        }
     </style>
 </head>
 <body>
@@ -77,7 +122,14 @@
                 <article>
                     <h3>Клієнтські обчислення (Client Computing Group)</h3>
                     <figure>
-                        <img tabindex="0" src="images/ccg-core-i9.jpg" alt="Процесор Intel Core i9-14900KF, вигляд згори" width="960" height="1075">
+                        <div class="card">
+                            <img tabindex="0" src="images/ccg-core-i9.jpg" alt="Процесор Intel Core i9-14900KF, вигляд згори" width="960" height="1075">
+                            <ul class="back">
+                                <li>Export Administration Regulations (EAR), 15 CFR 730-774</li>
+                                <li>Закон Шермана, розділ 2 (15 U.S.C. § 2)</li>
+                                <li>Договір про функціонування ЄС, стаття 102</li>
+                            </ul>
+                        </div>
                         <figcaption>Процесор Intel Core i9-14900KF. Фото: Pstrahl, Wikimedia Commons, ліцензія CC BY-SA 4.0</figcaption>
                     </figure>
                     <p>Найбільший за виручкою напрям корпорації: процесори Intel Core для ноутбуків і настільних комп'ютерів, платформи для виробників обладнання, бездротові рішення</p>
@@ -86,10 +138,17 @@
             </li>
 
             <li>
-                <article>
+                <article id="dcai">
                     <h3>Центри обробки даних і штучний інтелект (Data Center and AI)</h3>
                     <figure>
-                        <img tabindex="0" src="images/dcai-xeon.jpg" alt="Серверний процесор Intel Xeon E5-1620" width="960" height="1042">
+                        <div class="card">
+                            <img tabindex="0" src="images/dcai-xeon.jpg" alt="Серверний процесор Intel Xeon E5-1620" width="960" height="1042">
+                            <ul class="back">
+                                <li>Export Control Reform Act of 2018 (50 U.S.C. § 4801)</li>
+                                <li>EAR, ECCN 3A090 (додаток 1 до 15 CFR 774)</li>
+                                <li>Department of Energy Organization Act (42 U.S.C. § 7101)</li>
+                            </ul>
+                        </div>
                         <figcaption>Серверний процесор Intel Xeon E5-1620. Фото: Rjluna2, Wikimedia Commons, ліцензія CC BY-SA 4.0</figcaption>
                     </figure>
                     <p>Серверні процесори Intel Xeon, прискорювачі для задач штучного інтелекту та платформи для хмарних провайдерів і суперкомп'ютерів</p>
@@ -101,7 +160,14 @@
                 <article>
                     <h3>Мережі та периферійні обчислення (Network and Edge)</h3>
                     <figure>
-                        <img tabindex="0" src="images/nex-nuc.jpg" alt="Компактний комп'ютер Intel NUC восьмого покоління" width="960" height="633">
+                        <div class="card">
+                            <img tabindex="0" src="images/nex-nuc.jpg" alt="Компактний комп'ютер Intel NUC восьмого покоління" width="960" height="633">
+                            <ul class="back">
+                                <li>47 CFR Part 15 (радіочастотні пристрої)</li>
+                                <li>47 CFR Part 2, підрозділ J (сертифікація обладнання)</li>
+                                <li>Cybersecurity Enhancement Act of 2014</li>
+                            </ul>
+                        </div>
                         <figcaption>Компактна платформа Intel NUC 8. Фото: Laserlicht, Wikimedia Commons, ліцензія CC BY-SA 4.0</figcaption>
                     </figure>
                     <p>Обладнання та програмні платформи для телекомунікаційних мереж, віртуалізації мережевих функцій і обчислень на периферії - ближче до джерела даних, ніж хмарний центр обробки</p>
@@ -113,7 +179,13 @@
                 <article>
                     <h3>Контрактне виробництво (Intel Foundry)</h3>
                     <figure>
-                        <img tabindex="0" src="images/foundry-leixlip.png" alt="Головний вхід на виробничий майданчик Intel у Лейкслипі, Ірландія" width="960" height="641">
+                        <div class="card">
+                            <img tabindex="0" src="images/foundry-leixlip.png" alt="Головний вхід на виробничий майданчик Intel у Лейкслипі, Ірландія" width="960" height="641">
+                            <ul class="back">
+                                <li>CHIPS and Science Act of 2022 (Public Law 117-167)</li>
+                                <li>Регламент (ЄС) 2023/1781 (European Chips Act)</li>
+                            </ul>
+                        </div>
                         <figcaption>Виробничий майданчик Intel у Лейкслипі (Ірландія). Фото: Greenbogungalarmoder, Wikimedia Commons, ліцензія CC0</figcaption>
                     </figure>
                     <p>Виготовлення мікросхем на замовлення сторонніх розробників на власних фабриках корпорації в США, Ірландії та Ізраїлі, а також послуги з корпусування й тестування кристалів</p>
@@ -125,7 +197,13 @@
                 <article>
                     <h3>Програмовані логічні схеми (Altera)</h3>
                     <figure>
-                        <img tabindex="0" src="images/altera-cyc1000.jpg" alt="Плата з програмованою логічною інтегральною схемою Intel Cyclone 10" width="960" height="675">
+                        <div class="card">
+                            <img tabindex="0" src="images/altera-cyc1000.jpg" alt="Плата з програмованою логічною інтегральною схемою Intel Cyclone 10" width="960" height="675">
+                            <ul class="back">
+                                <li>EAR, ECCN 3A001.a.7 (програмовані логічні схеми)</li>
+                                <li>FIPS 140-3 (криптографічні модулі)</li>
+                            </ul>
+                        </div>
                         <figcaption>Плата CYC1000 з ПЛІС Intel Cyclone 10 LP. Фото: Antti Lukats, Wikimedia Commons, ліцензія CC0</figcaption>
                     </figure>
                     <p>Програмовані логічні інтегральні схеми (ПЛІС, FPGA) родин Cyclone, Arria та Stratix і засоби їх проєктування. Напрям виріс із компанії Altera, яку корпорація придбала 2015 року</p>
@@ -137,7 +215,14 @@
                 <article>
                     <h3>Системи допомоги водієві та автономне водіння (Mobileye)</h3>
                     <figure>
-                        <img tabindex="0" src="images/mobileye-jerusalem.jpg" alt="Автопарк безпілотних автомобілів Mobileye в Єрусалимі" width="960" height="510">
+                        <div class="card">
+                            <img tabindex="0" src="images/mobileye-jerusalem.jpg" alt="Автопарк безпілотних автомобілів Mobileye в Єрусалимі" width="960" height="510">
+                            <ul class="back">
+                                <li>National Traffic and Motor Vehicle Safety Act (49 U.S.C. § 30101)</li>
+                                <li>Правила ООН № 157 (системи утримання смуги руху)</li>
+                                <li>Правила ООН № 79 (рульове керування)</li>
+                            </ul>
+                        </div>
                         <figcaption>Автопарк безпілотних автомобілів Mobileye в Єрусалимі. Фото: Ilan Ben Oudiz, Wikimedia Commons, ліцензія CC BY-SA 4.0</figcaption>
                     </figure>
                     <p>Системи комп'ютерного зору на мікросхемах EyeQ, картографування доріг і платформи автономного водіння. Mobileye придбано 2017 року і виведено на біржу 2022-го, контрольний пакет залишився в корпорації</p>
@@ -149,7 +234,13 @@
                 <article>
                     <h3>Графічні процесори (Intel Arc)</h3>
                     <figure>
-                        <img tabindex="0" src="images/arc-b580.jpg" alt="Відеокарта Intel Arc B580 Limited Edition поруч із коробкою" width="960" height="720">
+                        <div class="card">
+                            <img tabindex="0" src="images/arc-b580.jpg" alt="Відеокарта Intel Arc B580 Limited Edition поруч із коробкою" width="960" height="720">
+                            <ul class="back">
+                                <li>EAR, ECCN 3A090 та 4A090</li>
+                                <li>Гармонізована система, товарна позиція 8473</li>
+                            </ul>
+                        </div>
                         <figcaption>Відеокарта Intel Arc B580 Limited Edition. Фото: Jiahwang, Wikimedia Commons, ліцензія CC0</figcaption>
                     </figure>
                     <p>Дискретні та вбудовані графічні процесори Intel Arc для ігор, відеомонтажу й прискорення обчислень, а також відкритий програмний стек драйверів</p>
@@ -161,7 +252,13 @@
                 <article>
                     <h3>Дослідження і розробки (Intel Labs)</h3>
                     <figure>
-                        <img tabindex="0" src="images/hq-noyce-building.jpg" alt="Вхід до будівлі Роберта Нойса - штаб-квартири Intel у Санта-Кларі" width="600" height="365">
+                        <div class="card">
+                            <img tabindex="0" src="images/hq-noyce-building.jpg" alt="Вхід до будівлі Роберта Нойса - штаб-квартири Intel у Санта-Кларі" width="600" height="365">
+                            <ul class="back">
+                                <li>National Science Foundation Act of 1950 (42 U.S.C. § 1861)</li>
+                                <li>CHIPS and Science Act of 2022 (Public Law 117-167)</li>
+                            </ul>
+                        </div>
                         <figcaption>Будівля Роберта Нойса, штаб-квартира корпорації в Санта-Кларі. Фото: Intel Free Press, Wikimedia Commons, ліцензія CC BY 2.0</figcaption>
                     </figure>
                     <p>Дослідницький підрозділ корпорації: нові транзисторні структури, нейроморфні та квантові обчислення, компілятори й відкриті програмні платформи. Названа на честь співзасновника штаб-квартира в Санта-Кларі залишається центром корпоративного управління</p>
@@ -180,5 +277,13 @@
             <p><b>Контактні телефони:</b> <a href="tel:+14087658080">+1&nbsp;(408)&nbsp;765-8080</a>, <a href="tel:+19163777000">+1&nbsp;(916)&nbsp;377-7000</a></p>
         </address>
     </footer>
+    <div id="modal">
+        <div>
+            <h3>Попередження</h3>
+            <p>Постачання серверних процесорів і прискорювачів штучного інтелекту за межі США обмежене правилами експортного контролю EAR, тому інформація про напрям не є дозволом на їх експорт</p>
+            <label><input type="checkbox" id="agree"> Я розумію суть попередження</label>
+        </div>
+    </div>
+    <script src="js/directions.js"></script>
 </body>
 </html>

@@ -87,12 +87,23 @@
             text-shadow: 2px 2px 2px #00c7fd;
             transition: text-shadow 0.5s 2s;
         }
+        header h1 {
+            margin: 0;
+        }
+        #news {
+            margin: 5px 0 0;
+            color: red;
+            white-space: nowrap;
+        }
     </style>
 </head>
 <body>
     <header>
         <img src="images/logo-intel.svg" alt="Логотип Intel Corporation" width="200" height="79">
-        <h1>Intel Corporation</h1>
+        <div>
+            <h1>Intel Corporation</h1>
+            <p id="news"></p>
+        </div>
         <p>Корпорація напівпровідникової індустрії. Заснована 18 липня 1968 року, Санта-Клара, Каліфорнія, США</p>
     </header>
 
@@ -215,5 +226,6 @@
             <p><b>Контактні телефони:</b> <a href="tel:+14087658080">+1&nbsp;(408)&nbsp;765-8080</a> (штаб-квартира), <a href="tel:+19163777000">+1&nbsp;(916)&nbsp;377-7000</a> (служба підтримки клієнтів)</p>
         </address>
     </footer>
+    <script src="js/index.js"></script>
 </body>
 </html>

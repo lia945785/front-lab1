@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
     <style>
         body {
-            padding-top: 110px;
+            padding-top: 7rem;
         }
         header {
             position: fixed;
@@ -20,7 +20,7 @@
         }
         ol {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
             gap: 20px;
             padding: 0;
             list-style: none;
@@ -63,12 +63,14 @@
         .card {
             position: relative;
             transition: transform 0.6s;
+            -webkit-transform-style: preserve-3d;
             transform-style: preserve-3d;
         }
         .flipped {
             transform: rotateY(180deg);
         }
         figure img, .back {
+            -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
         }
         .back {

@@ -20,8 +20,10 @@
         }
         fieldset {
             flex-basis: 100%;
+            min-width: 0;
         }
         input, select, textarea {
+            max-width: 100%;
             padding: 8px;
             border: 1px solid gray;
         }
@@ -52,6 +54,8 @@
         .active {
             background-color: lightyellow;
             border: 2px solid #0068b5;
+            -webkit-box-shadow: 0 0 10px #0068b5;
+            -moz-box-shadow: 0 0 10px #0068b5;
             box-shadow: 0 0 10px #0068b5;
         }
         .tooltip {
@@ -62,6 +66,22 @@
             padding: 10px;
             background-color: #333;
             color: white;
+        }
+        @media (max-width: 768px) {
+            textarea {
+                width: 100%;
+            }
+            .buttons {
+                flex-shrink: 1;
+            }
+            .tooltip {
+                position: static;
+                margin: 10px 0 0;
+            }
+            input[type="radio"] + label::after {
+                content: "\A";
+                white-space: pre;
+            }
         }
     </style>
 </head>

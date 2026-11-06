@@ -10,7 +10,7 @@
     <style>
         body {
             position: relative;
-            padding-top: 110px;
+            padding-top: 7rem;
         }
         header {
             position: absolute;
@@ -20,10 +20,11 @@
             z-index: 2;
         }
         nav {
+            position: -webkit-sticky;
             position: sticky;
             top: 0;
             z-index: 1;
-            padding: 0 40px;
+            padding: 0 3%;
             background-color: hsl(210, 100%, 20%);
         }
         nav ul {
@@ -66,7 +67,7 @@
         }
         #founders {
             max-height: 400px;
-            overflow-y: auto;
+            overflow: auto;
             transition: transform 0.5s;
         }
         #founders:hover {
@@ -94,6 +95,15 @@
             margin: 5px 0 0;
             color: red;
             white-space: nowrap;
+        }
+        @media (max-width: 768px) {
+            main, aside {
+                float: none;
+                width: auto;
+            }
+            #news {
+                white-space: normal;
+            }
         }
     </style>
 </head>
